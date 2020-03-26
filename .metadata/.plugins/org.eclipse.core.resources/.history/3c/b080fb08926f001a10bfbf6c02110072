@@ -1,0 +1,5 @@
+package com.bridgelabz.selenium.wait;
+
+public class Implicit {
+
+}

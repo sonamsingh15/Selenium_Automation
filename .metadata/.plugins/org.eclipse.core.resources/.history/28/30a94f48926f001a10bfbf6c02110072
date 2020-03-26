@@ -1,0 +1,21 @@
+package com.bridgelabz.selenium.wait;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+
+import com.bridgelabz.selenium.base.Base;
+
+public class Implicit extends Base {
+	public static void main(String[] args) throws InterruptedException{
+		@SuppressWarnings("unused")
+		Base base=new Base();
+		driver.get("https://www.google.com");
+		
+		driver.findElement(By.className("q")).sendKeys("Waited 10 second");
+		Thread.sleep(1000);
+		driver.findElement(By.className("RNkmpXc")).click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+	}
+}

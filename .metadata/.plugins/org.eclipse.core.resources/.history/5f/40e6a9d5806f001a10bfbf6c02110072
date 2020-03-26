@@ -1,0 +1,36 @@
+package com.bridgelabz.selenium.browseroperation;
+
+import java.util.Set;
+
+import javax.swing.border.TitledBorder;
+
+import org.openqa.selenium.WebElement;
+
+import com.bridgelabz.selenium.base.Base;
+
+public class CloseMainWindows extends Base {
+
+	public static void CloseManiWindow() {
+		driver.get("https://www.naukari.com");
+		Thread.sleep(1000);
+		String parentWindowsHandleID=driver.getWindowHandle();
+		Set<String> allWindowsHandles=driver.getWindowHandles();
+		int count=allWindowsHandles.size();
+		String title = driver.getTitle();
+		System.out.println("No of windows: " + count);
+		for (String windowHandle :allWindowsHandles ) {
+			driver.switchTo().window(windowHandle);
+			if (windowHandle.equals(parentWindowsHandleID)) {
+				driver.close();
+				System.out.println(title + " named window closed!");
+			}
+		}
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		@SuppressWarnings("unused")
+		Base base = new Base();
+		CloseManiWindow();
+	}
+
+}
