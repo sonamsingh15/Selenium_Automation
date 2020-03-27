@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/home/admin1/AutomationTest/SeleniumBasic"/>
 			<item value="/home/admin1/FbloginPage/FaceBookSignUp"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,13 +27,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.bridgelabzs.amazon"/>
 		</list>
 		<list key="groupId">
-			<item value="com.bridgelabzs.amazon"/>
 		</list>
 		<list key="artifactId">
-			<item value="Amazon"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -48,10 +46,12 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="Myntra"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Myntra"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
