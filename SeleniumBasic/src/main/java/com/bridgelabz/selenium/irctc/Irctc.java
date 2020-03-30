@@ -54,7 +54,7 @@ public class Irctc extends Base{
 				"//input[@class='ng-tns-c11-6 ui-inputtext ui-widget ui-state-default ui-corner-all ng-star-inserted']"))
 				.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//option[contains(text(),'1995')]")).click();
+		driver.findElement(By.xpath("//option[contains(text(),'1997')]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//option[contains(text(),'April')]")).click();
 		Thread.sleep(1000);

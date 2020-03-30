@@ -5,8 +5,8 @@
     <classes>
       <class name="com.bridgelabz.bookwagon.test.BooksWagonTest">
         <methods>
-          <include name="addedBook"/>
-          <include name="setup"/>
+          <include name="Setup"/>
+          <include name="WhenUserTypeAuthorAndBookName_ShouldAbleToPlaceOrder"/>
           <include name="close"/>
         </methods>
       </class> <!-- com.bridgelabz.bookwagon.test.BooksWagonTest -->

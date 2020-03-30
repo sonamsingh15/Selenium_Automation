@@ -12,40 +12,63 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.bridgelabz.bookswagon.base.BaseTest;
+import com.bridgelabz.bookswagon.base.Base;
 import com.bridgelabz.bookswagon.page.Homepage;
+import com.bridgelabz.bookswagon.page.LoginPage;
 
-public class BooksWagonTest extends BaseTest {
+public class BooksWagonTest extends Base {
 
 @BeforeClass
-	public void setup() {
-	initialize();
+	public void Setup() {
+	Initialize();
 	}
 
  
-@Test(priority=1)
-public static void WhenTypeAuthorAndBookName_ShouldReturnBooklist() {
- Homepage searchBook= new Homepage(driver);
- searchBook.searchBar("Ravinder Singh");
- searchBook.buttonClick();
- }
+@Test
+public static void WhenUserTypeAuthorAndBookName_ShouldAbleToPlaceOrder()throws AWTException, InterruptedException {
 
-@Test(priority=2)
-public static void addedBook() throws AWTException {
-	Homepage addBook=new Homepage(driver);
-	addBook.findBook();
-	addBook.buttonClick();
+LoginTest login=new LoginTest();
+login.givenLoginPage_WhenEnterTheLoginDetail_ShouldLoginSuccessful();
+
+
+Homepage addBook= new Homepage(driver);
+addBook.searchBar("Ravinder Singh");
+ addBook.onClick();
+
+//user search by author name 
+	addBook.searchBookByName();
+	Thread.sleep(100);
+	addBook.onClick();
+
+//click to buy 
 	addBook.buyNow();
-	addBook.buttonClick();
-	addBook.quantity();
-//driver.findElement(By.xpath("//input[@name=\"BookCart$lvCart$imgPayment\"]")).click();
-
-
+	Thread.sleep(5000);
+	addBook.onClick();
+	
+//order place	
+	addBook.PlaceOrder();
+	addBook.onClick();
+	
+	addBook.ContinueShopping();
+	Thread.sleep(5000);
+ 
+	addBook.recipitienName("sonamsingh");
+	addBook.nameOfComapany("Bridgelabz");
+	addBook.streetAddress("vashi sector 3, navi mumbai ");
+	addBook.enterCityName("Mumbai");
+	addBook.enterPinCode("400706");
+	addBook.enterphoneNumber("8084845315");
+	
+	addBook.sameAddress();
+	addBook.saveAndContinue();
+	Thread.sleep(100);
+	addBook.payment();
+    Thread.sleep(1000);
 	
 }
 
 @AfterClass
-public void close() {
+public void close()  {
 	driver.close();
 }
 
